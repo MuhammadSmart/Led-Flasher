@@ -1,6 +1,9 @@
-main.d main.o: .././main.c .././MCAL/DIO_Interface.h \
- .././MCAL/../Utils/STD_TYPES.h .././MCAL/../Utils/Utils.h \
- .././MCAL/../Utils/MemMap.h \
+Application/Application.d Application/Application.o: \
+ ../Application/Application.c ../Application/Application.h \
+ ../Application/../MCAL/DIO_Interface.h \
+ ../Application/../MCAL/../Utils/STD_TYPES.h \
+ ../Application/../MCAL/../Utils/Utils.h \
+ ../Application/../MCAL/../Utils/MemMap.h \
  h:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\delay.h \
  h:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  h:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -9,13 +12,15 @@ main.d main.o: .././main.c .././MCAL/DIO_Interface.h \
  h:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  h:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h
 
-.././MCAL/DIO_Interface.h:
+../Application/Application.h:
 
-.././MCAL/../Utils/STD_TYPES.h:
+../Application/../MCAL/DIO_Interface.h:
 
-.././MCAL/../Utils/Utils.h:
+../Application/../MCAL/../Utils/STD_TYPES.h:
 
-.././MCAL/../Utils/MemMap.h:
+../Application/../MCAL/../Utils/Utils.h:
+
+../Application/../MCAL/../Utils/MemMap.h:
 
 h:\atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\delay.h:
 

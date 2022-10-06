@@ -120,6 +120,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Application\Application.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\Application.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\KeyPad.c">
       <SubType>compile</SubType>
     </Compile>
@@ -214,6 +220,7 @@
   <ItemGroup>
     <Folder Include="HAL" />
     <Folder Include="MCAL" />
+    <Folder Include="Application" />
     <Folder Include="Utils" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

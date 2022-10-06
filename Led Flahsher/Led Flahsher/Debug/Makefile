@@ -35,11 +35,13 @@ LINKER_SCRIPT_DEP:=
 SUBDIRS :=  \
 ../HAL \
 ../MCAL \
+../Application \
 ../Utils
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../Application/Application.c \
 ../HAL/KeyPad.c \
 ../HAL/LCD.c \
 ../HAL/Motor.c \
@@ -63,6 +65,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+Application/Application.o \
 HAL/KeyPad.o \
 HAL/LCD.o \
 HAL/Motor.o \
@@ -79,6 +82,7 @@ MCAL/Timers.o \
 MCAL/UART.o
 
 OBJS_AS_ARGS +=  \
+Application/Application.o \
 HAL/KeyPad.o \
 HAL/LCD.o \
 HAL/Motor.o \
@@ -95,6 +99,7 @@ MCAL/Timers.o \
 MCAL/UART.o
 
 C_DEPS +=  \
+Application/Application.d \
 HAL/KeyPad.d \
 HAL/LCD.d \
 HAL/Motor.d \
@@ -111,6 +116,7 @@ MCAL/Timers.d \
 MCAL/UART.d
 
 C_DEPS_AS_ARGS +=  \
+Application/Application.d \
 HAL/KeyPad.d \
 HAL/LCD.d \
 HAL/Motor.d \
@@ -140,6 +146,13 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+Application/Application.o: ../Application/Application.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)H:\Atmel\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"H:\Atmel\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "H:\Atmel\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 HAL/KeyPad.o: ../HAL/KeyPad.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0

@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+Application\Application.c
+
 HAL\KeyPad.c
 
 HAL\LCD.c
